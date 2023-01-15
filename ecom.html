@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <!-- <link rel="stylesheet" href="DM.css" /> -->
+    <script src="https://kit.fontawesome.com/e8fa2e31b4.js" crossorigin="anonymous"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "poppins", sans-serif;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .top-bar {
+        width: 80%;
+        height: 4rem;
+        background-color: rgb(7, 208, 121);
+        margin-bottom: 20px;
+        display: flex;
+        padding: 0px 20px;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .fa-solid {
+        color: rgb(1, 2, 2);
+        margin-right: 10px;
+      }
+      .header {
+        width: 80%;
+        height: 200px;
+        background-color: rgb(9, 165, 144);
+        margin-bottom: 20px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .navbar p {
+        font-size: 30px;
+        font-weight: bold;
+        color: white;
+      }
+      .navbar ul {
+        display: flex;
+        list-style: none;
+      }
+      .navbar ul li a {
+        text-decoration: none;
+        font-size: 18px;
+        color: white;
+        padding: 7px 15px;
+      }
+      .navbar ul li a:hover {
+        background-color: white;
+        color: rgb(9, 165, 144);
+        border-radius: 3px;
+      }
+      .navbar-b {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .dropdown {
+        width: 130px;
+        text-align: center;
+        background-color: white;
+        border-radius: 3px;
+      }
+      select {
+        outline: none;
+        border: none;
+        background: none;
+        padding: 7px 10px 7px 0px;
+        color: rgb(9, 165, 144);
+        font-size: 18px;
+        cursor: pointer;
+      }
+      select:hover {
+        color: #333;
+      }
+      .search {
+        width: 500px;
+        background-color: white;
+        height: 45px;
+        border-radius: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px;
+      }
+      .search input {
+        width: 440px;
+        border: none;
+        outline: none;
+        height: 40px;
+      }
+      .cart {
+        display: flex;
+        background-color: white;
+        justify-content: space-between;
+        align-items: center;
+        padding: 7px 10px;
+        border-radius: 3px;
+        width: 80px;
+        font-size: 18px;
+      }
+      .cart p {
+        height: 22px;
+        width: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 22px;
+        background-color: white;
+        color: black;
+      }
+      .container {
+        width: 80%;
+        display: flex;
+        margin-bottom: 20px;
+      }
+      #root {
+        width: 70%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+      }
+      .sidebar {
+        width: 30%;
+        border-radius: 5px;
+        background-color: rgb(7, 208, 121);
+        margin-left: 20px;
+        padding: 20px;
+        text-align: center;
+      }
+      .head {
+        background-color: rgb(9, 165, 144);
+        border-radius: 3px;
+        height: 40px;
+        padding: 10px;
+        margin-bottom: 20px;
+        color: white;
+        display: flex;
+        align-items: center;
+      }
+      .foot {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0px;
+        padding: 10px 0px;
+        border-top: 1px solid #333;
+      }
+      .box {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        border: 1px solid rgb(9, 165, 144);
+        border-radius: 5px;
+      }
+      .img-box {
+        width: 50%;
+        height: 170px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .left {
+        width: 50%;
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin-left: 60px;
+      }
+      img {
+        max-height: 90%;
+        max-width: 90%;
+        object-fit: cover;
+        object-position: center;
+      }
+      button {
+        border: none;
+        border-radius: 5px;
+        background-color: rgb(9, 165, 144);
+        padding: 10px 25px;
+        cursor: pointer;
+        color: white;
+      }
+      button:hover {
+        background-color: #333;
+      }
+      .cart-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        background-color: rgb(9, 165, 144);
+        border-bottom: 1px solid white;
+        border-radius: 3px;
+        margin: 10px 10px;
+      }
+      .row-img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        border: 1px solid rgb(9, 165, 144);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .rowimg {
+        max-width: 43px;
+        max-height: 43px;
+        border-radius: 50%;
+      }
+      .fa-trash:hover {
+        cursor: pointer;
+        color: #333;
+      }
+      label {
+        position: absolute;
+        width: 45px;
+        height: 22px;
+        right: 20px;
+        top: 20px;
+        border: 2px solid;
+        border-radius: 20px;
+      }
+      label:before {
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 20px;
+        left: 1px;
+        top: 1px;
+        border-radius: 50%;
+        background: #000;
+        cursor: pointer;
+        transition: 0.4s;
+      }
+      label.active:before {
+        left: 24px;
+        background: white;
+      }
+      body.night {
+        background: #000;
+        color: white;
+      }
+      #preloader {
+        background: #000 url(image/loader.gif) no-repeat top center;
+        height: 180vh;
+        width: 150%;
+        position: fixed;
+        z-index: 100;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="preloader"></div>
+    <header>
+      <label id="dark-change"></label>
+    </header>
+
+    <dic class="top-bar">
+      <p><i class="fa-solid fa-envelope"></i>decent.catalog@gmail.com</p>
+      <p><i class="fa-solid fa-phone"></i>+981245634341</p>
+    </dic>
+    <div class="header">
+      <div class="navbar">
+        <p>HOME</p>
+        <ul>
+          <li><a href="login.html">login</a></li>
+          <li><a href="ecom.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <!-- <label>
+            <input type="checkbox" />
+            <span class="check"></span>
+          </label> -->
+        </ul>
+      </div>
+      <div class="navbar-b">
+        <div class="dropdown">
+          <select name="">
+            <option value="1">Categories</option>
+            <option value="2">New</option>
+            <option value="3">Imported</option>
+            <option value="4">Local</option>
+          </select>
+        </div>
+        <div class="search">
+          <input type="search" placeholder="Search..." />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <p id="count">0</p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div id="root"></div>
+      <div class="sidebar">
+        <div class="head"><p>My Cart</p></div>
+        <div id="cartItem">Your cart is empty</div>
+        <div class="foot">
+          <h3>Total</h3>
+          <h2 id="total">Rp.0,00</h2>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var content = document.getElementsByTagName("body")[0];
+      var darkMode = document.getElementById("dark-change");
+      darkMode.addEventListener("click", function () {
+        darkMode.classList.toggle("active");
+        content.classList.toggle("night");
+      });
+    </script>
+    <script src="addtocart.js"></script>
+
+    <script>
+      var loader = document.getElementById("preloader");
+      window.addEventListener("load", function () {
+          loader.style.display = "none"
+      })
+      
+    </script>
+  </body>
+</html>

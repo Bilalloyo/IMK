@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>About</title>
+        <link rel="stylesheet" type="text/css" href="about.css">
+    </head>
+    <body>
+        <header>
+            <label id="dark-change"></label>
+        </header>
+        <div class="top-bar">
+            <p><i class="fa-solid fa-envelope"></i>decent.catalog@gmail.com</p>
+            <p><i class="fa-solid fa-phone"></i>+981245634341</p>
+        </div>
+        <div class="header">
+            <div class="navbar">
+              <p>ABOUT</p>
+              <ul>
+                <li><a href="ecom.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <!-- <label>
+                  <input type="checkbox" />
+                  <span class="check"></span>
+                </label> -->
+              </ul>
+            </div>
+        </div>    
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="image/Decent.jpg">
+                </div>
+                <div class="about-col-2">
+                    <p class="border_tebal3">ABOUT US</p  >
+                    <br>
+                    <br>
+                    <br>
+                    <p>
+                        Hello and welcome to Decent, the place to find the best product for every taste and occasion. 
+                        We thoroughly check the quality of our goods, working only with reliable suppliers so that you only receive the best quality product. 
+                        We at Decent believe in high quality and exceptional customer service. But most importantly, we believe shopping is a right, 
+                        not a luxury, so we strive to deliver the best products at the most affordable prices, and ship them to you regardless of where you are located.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <script>
+            var content = document.getElementsByTagName("body")[0];
+            var darkMode = document.getElementById("dark-change");
+            darkMode.addEventListener("click", function () {
+              darkMode.classList.toggle("active");
+              content.classList.toggle("night");
+            });
+        </script>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div>©Copyright By Bilal, Rayhan & Hesa</div>
+    </body>
+</html>
